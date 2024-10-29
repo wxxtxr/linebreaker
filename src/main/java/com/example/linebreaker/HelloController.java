@@ -1,6 +1,7 @@
 package com.example.linebreaker;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,6 +55,8 @@ public class HelloController {
         } catch (NumberFormatException e) {
             dialog = new Dialog();
             dialog.setContentText("숫자만 입력해주세요");
+            dialog.show();
+            dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CLOSE);
         }
     }
 

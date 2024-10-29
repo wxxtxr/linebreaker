@@ -12,7 +12,7 @@
     </padding>
 
     <Label fx:id="welcomeText" />
-    <TextField prefWidth="50.0" fx:id="lengthWords" />
+    <TextField prefWidth="50.0" fx:id="lengthWords" promptText="음절 길이"/>
     <TextField fx:id="textField"/>
     <Button onAction="#onLineBreakButtonClick" text="LineBreak!" />
 </VBox>

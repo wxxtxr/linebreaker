@@ -57,7 +57,14 @@ jlinkZip {
 }
 
 jar {
-    manifest {
+    manifest { (
         attributes 'Main-Class': 'com.example.linebreaker.HelloApplication'
+    )
     }
+}
+
+tasks.register('createJar', Jar) {
+    archiveBaseName.set('LineBreaker')  // JAR 파일 이름 설정
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
