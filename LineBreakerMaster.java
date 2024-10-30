@@ -91,7 +91,12 @@ import java.util.StringTokenizer;
 		        Loop1 : while (st.hasMoreTokens()) {
 		            for (int i=0; i<length; i++) {
 		                if(!st.hasMoreTokens()) {break Loop1;}
-		                output += st.nextToken() + " ";
+		                String temp = st.nextToken();
+		                if((temp.charAt(temp.length()-1) == '.' || temp.charAt(temp.length()-1) == '?') && i>2) {
+		                	output += temp;
+		                	break;
+		                }
+		                output += temp + " ";
 		            }
 		            output += "\n";
 		        }
